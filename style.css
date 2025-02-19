@@ -51,6 +51,7 @@
 
     .container img {
         width:20%;
+        opacity:0.65;
     }
     
     .container:hover {
