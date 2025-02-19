@@ -1,151 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap');
+/* Importation d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive+Mono:wght@300;400;500;700&display=swap');
 
-    /* ---------- Reset & Essentials ---------- */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #111;
+    color: #fff;
+}
 
-    body {
-        font-size: 20px;
-        font-family: 'Inter', sans-serif;
-        color: white;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-        position: relative;
-        background: linear-gradient(-45deg, #18191C, #23252B, #18191C);
-        background-size: 400% 400%;
-        animation: gradientBG 10s ease infinite;
-    }
+/* Styles généraux */
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Recursive Mono', arial;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrer verticalement */
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 50px; /* Ajoute de l'espace avant les éléments */
+    padding-bottom: 50px; /* Ajoute de l'espace en bas pour permettre le défilement */
+    overflow: auto; /* Permet de faire défiler si nécessaire */
+    box-sizing: border-box; /* Assure que le padding ne perturbe pas la taille de la page */
+}
 
-    /* ---------- Background Animation ---------- */
-    @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+.flagarmpng img {
+    width: 55%;
+    opacity: 0.5;
+}
 
-    /* ---------- Main Container ---------- */
-    .container {
-        background: rgba(42, 44, 49, 0.9);
-        border: 2px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
-        width: fit-content;
-        max-width: 90%;
-        padding: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        z-index: 2;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
+/* Drapeau arménien stylisé et intégré */
+.flag-armenia {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 150px; /* Réduit la taille du drapeau */
+    height: 80px; /* Réduit la taille du drapeau */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3), 
+                0 0 15px rgba(0, 51, 160, 0.3), 
+                0 0 25px rgba(242, 168, 0, 0.3);
+    opacity: 0.9;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
-    .container img {
-        width:20%;
-        opacity:0.65;
-    }
+.flag-armenia:hover {
+    transform: translateX(-50%) rotate(0deg) scale(1.1);
+    opacity: 1;
+}
+
+.flag-armenia div {
+    height: 33.3%;
+    width: 100%;
+}
+
+.red {
+    background: #D90012;
+}
+
+.blue {
+    background: #0033A0;
+}
+
+.orange {
+    background: #F2A800;
+}
+
+.container {
+    background: #0a0a0a;
+    padding: 30px; /* Réduit le padding */
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+    max-width: 400px; /* Réduit la largeur maximale */
+    width: 90%;
+    margin-bottom: 30px; /* Ajoute de l'espace en bas du container */
+}
+
+h1, h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Réduit l'espacement des lettres */
+    font-size: 1.4rem; /* Réduit la taille du texte */
+}
+
+p {
+    font-size: 14px; /* Réduit la taille de la police */
+    color: #aaaaaa;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Réduit l'écart entre les boutons sociaux */
+    margin-top: 15px;
     
-    .container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
-    }
+}
 
-    /* ---------- Heading & Text ---------- */
-    h1, h2, h3 {
-        font-weight: 700;
-        font-size: 26px;
-        font-family: 'Sora', sans-serif;
-        letter-spacing: 1px;
-        color: #ffffff;
-        margin-bottom: 10px;
-        background: linear-gradient(90deg, #ffffff, #a7a7a7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+.social-button {
+    display: flex;
+    align-items: center;
+    background: #111111;
+    padding: 8px; /* Réduit le padding */
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    p {
-        font-size: 18px;
-        color: #cccccc;
-        max-width: 600px;
-        margin-bottom: 15px;
-        opacity: 0.9;
-    }
+.social-button:hover {
+    transform: scale(1.03); /* Réduit la taille de l'effet au survol */
+    background: #222222;
+}
 
-    /* ---------- Social Media Buttons ---------- */
-    .socials {
-        margin-top: 20px;
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+.social-button img {
+    width: 25px; /* Réduit la taille des icônes */
+    height: 25px; /* Réduit la taille des icônes */
+    margin-right: 8px; /* Réduit l'espace entre l'icône et le texte */
+    border-radius: 50%;
+}
 
-    .social-button {
-        color: white;
-        background: rgba(255, 255, 255, 0.07);
-        text-decoration: none;
-        padding: 12px 20px;
-        border-radius: 10px;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: auto;
-        min-width: 220px;
-        transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .social-button:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transform: translateY(-4px);
-        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
-    }
-
-    .social-button img {
-        width: 30px;
-        height: 30px;
-        border-radius: 5px;
-    }
-
-    /* ---------- Animation Fade-in ---------- */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .container {
-        animation: fadeIn 0.8s ease-in-out;
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) {
-        body {
-            font-size: 18px;
-        }
-
-        .container {
-            padding: 25px;
-        }
-
-        .socials {
-            flex-direction: column;
-            gap: 12px;
-        }
-    }
+span {
+    font-size: 13px; /* Réduit la taille de la police */
+    text-transform: uppercase;
+    font-weight: bold;
+}
