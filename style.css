@@ -90,6 +90,9 @@ h1, h3 {
     text-transform: uppercase;
     letter-spacing: 1px; /* Réduit l'espacement des lettres */
     font-size: 1.4rem; /* Réduit la taille du texte */
+    background: linear-gradient(90deg, #ffffff, #a7a7a7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 p {
