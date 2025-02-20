@@ -1,139 +1,116 @@
-/* Importation d'une police moderne */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Recursive+Mono:wght@300;400;500;700&display=swap');
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
-body {
-    font-family: 'JetBrains Mono', monospace;
-    background-color: #111;
-    color: #fff;
+/* Variables globales */
+:root {
+    --color-background: #0a0a0a;
+    --color-text: #d4af37;
+    --color-highlight: #8b0000;
+    --color-dark: #111;
+    --color-border: rgba(255, 0, 0, 0.5);
 }
 
-/* Styles généraux */
-body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Recursive Mono', arial;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centrer verticalement */
-    height: 100vh;
+/* Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
     text-align: center;
-    flex-direction: column;
-    position: relative;
-    padding-top: 50px; /* Ajoute de l'espace avant les éléments */
-    padding-bottom: 50px; /* Ajoute de l'espace en bas pour permettre le défilement */
-    overflow: auto; /* Permet de faire défiler si nécessaire */
-    box-sizing: border-box; /* Assure que le padding ne perturbe pas la taille de la page */
 }
 
-.flagarmpng img {
-    width: 55%;
-    opacity: 0.5;
-}
-
-/* Drapeau arménien stylisé et intégré */
-.flag-armenia {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-3deg);
-    width: 150px; /* Réduit la taille du drapeau */
-    height: 80px; /* Réduit la taille du drapeau */
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3), 
-                0 0 15px rgba(0, 51, 160, 0.3), 
-                0 0 25px rgba(242, 168, 0, 0.3);
-    opacity: 0.9;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.flag-armenia:hover {
-    transform: translateX(-50%) rotate(0deg) scale(1.1);
-    opacity: 1;
-}
-
-.flag-armenia div {
-    height: 33.3%;
-    width: 100%;
-}
-
-.red {
-    background: #D90012;
-}
-
-.blue {
-    background: #0033A0;
-}
-
-.orange {
-    background: #F2A800;
-}
-
+/* Conteneur général */
 .container {
-    background: #0a0a0a;
-    padding: 30px; /* Réduit le padding */
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
-    max-width: 400px; /* Réduit la largeur maximale */
-    width: 90%;
-    margin-bottom: 30px; /* Ajoute de l'espace en bas du container */
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
 
-h1, h3 {
-    color: #ffffff;
+/* HEADER */
+header {
+    background: linear-gradient(to right, var(--color-dark), black);
+    padding: 50px 0;
+    border-bottom: 2px solid var(--color-border);
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px; /* Réduit l'espacement des lettres */
-    font-size: 1.4rem; /* Réduit la taille du texte */
-    background: linear-gradient(90deg, #ffffff, #a7a7a7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 p {
-    font-size: 14px; /* Réduit la taille de la police */
-    color: #aaaaaa;
+    font-size: 18px;
+    font-weight: 300;
 }
 
+/* SECTION INTRO */
+.intro {
+    padding: 20px;
+    background: var(--color-dark);
+    border: 2px solid var(--color-highlight);
+    box-shadow: 0 0 20px var(--color-highlight);
+    margin: 100px auto;
+    width: 60%;
+    border-radius: 10px;
+}
+
+img {
+    border-style: solid;
+    border-radius: 500px;
+    width: 15%;
+}
+
+/* SECTION SOCIAL */
 .socials {
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.buttons {
     display: flex;
-    flex-direction: column;
-    gap: 12px; /* Réduit l'écart entre les boutons sociaux */
-    margin-top: 15px;
-    
+    justify-content: center;
+    gap: 20px;
 }
 
 .social-button {
     display: flex;
     align-items: center;
-    background: #111111;
-    padding: 8px; /* Réduit le padding */
-    border-radius: 8px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    gap: 10px;
+    padding: 15px 40px;
+    background-color: var(--color-highlight);
+    border-radius: 5px;
     text-decoration: none;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.social-button:hover {
-    transform: scale(1.03); /* Réduit la taille de l'effet au survol */
-    background: #222222;
+.discord:hover {
+    background-color: #640000;
+}
+
+.telegram:hover {
+    background-color: #640000;
 }
 
 .social-button img {
-    width: 25px; /* Réduit la taille des icônes */
-    height: 25px; /* Réduit la taille des icônes */
-    margin-right: 8px; /* Réduit l'espace entre l'icône et le texte */
-    border-radius: 50%;
+    width: 30px;
+    height: auto;
 }
 
-span {
-    font-size: 13px; /* Réduit la taille de la police */
-    text-transform: uppercase;
-    font-weight: bold;
+/* FOOTER */
+footer {
+    background: black;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 2px solid var(--color-border);
+    margin-top: 150px;
 }
